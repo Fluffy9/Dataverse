@@ -1,5 +1,9 @@
 # app
 
+[contracts](https://github.com/Fluffy9/Dataverse-Contracts)
+[server](https://github.com/Fluffy9/Dataverse-BasicAPI-Akash)
+[documentation](https://github.com/Fluffy9/Dataverse/wiki)
+
 ## Project setup
 ```
 npm install
