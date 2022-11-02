@@ -13,12 +13,21 @@ export default new Vuex.Store({
         currency: "KLAY", 
         registry: "0x50c78172549FA69e7dBB2e97D88cD4EF578248f3", 
         time: {
-          "1 hour": 3600,
+          "1 hour": 3600, // 1 sec block times
           "24 hours": 86400, 
           "48 hours": 172800, 
           "7 days": 604800
         }
       },
+      {
+        name: "Mumbai",
+        currency: "Matic",
+        registry: "0x607D2D6f0385262adb93B439a822CE2Fe29A753A",
+        time: {
+          "10 min": 600, // 2 sec block times
+          "30 min": 3499, 
+        }
+      }
     ],
 
     sponsored:{
@@ -26,13 +35,16 @@ export default new Vuex.Store({
         {
           id: 0, 
           name: "BasicAPI", 
-          networks: ["Klaytn"], 
+          networks: ["Klaytn", "Mumbai"], 
           desc: "Fetch any public API", 
           docs: "https://github.com/Fluffy9/Dataverse/wiki/Feeds#basicapi-feed", 
           oracle: "0x62117462Abd17359468191716fBcfd3eEa2Dd023", 
           img: "",
           href: "http://h8jmnn0fdld39b2hp1l5v0c6a8.ingress.akt.computer",
-          test: "0xB20B232215a7d544cD2fC9cdE25416343CdF68d3",
+          test: {
+            "Klaytn BaoBab": "0xB20B232215a7d544cD2fC9cdE25416343CdF68d3", 
+            "Mumbai": "0x981bA12935675F696D6bfdcDe349fAB34f369107"
+          },
         }
       ]
     },
@@ -52,6 +64,7 @@ export default new Vuex.Store({
     },
     async getNewRequests({state, dispatch}, blocks){
       if(!blocks){throw new Error("Invalid block range")}
+      debugger
       let network = state.networks.find(x => x.name == state.ethereum.network)
       let contract = new ethers.Contract(network.registry, require("@/assets/ABI/KlaytnDV.json"), state.ethereum.provider)
       let filter = contract.filters.NewRequest()
@@ -72,6 +85,7 @@ export default new Vuex.Store({
     },
     async newRequest({state}, {input, oracle, bounty, test}){
       if(!input || !oracle || !bounty || !test) {throw new Error("Invalid arguments")}
+      debugger
       let network = state.networks.find(x => x.name == state.ethereum.network)
       let contract = new ethers.Contract(test, require("@/assets/ABI/IntegrationTestKlaytn.json"), state.ethereum.signer)
       return await contract.requestData(oracle, input, bounty, {value: ethers.BigNumber.from(bounty)})

@@ -57,7 +57,7 @@ export default {
         }
     },
     watch: {
-        ready(old, now){
+        ready(now, old){
             if(now){
                 this.setOptions()
                 this.getRequests()
@@ -66,9 +66,11 @@ export default {
     },
     methods: {
         setOptions(){
+            debugger
             let network = this.$store.state.networks.find(x => x.name == this.$store.state.ethereum.network)
-            for(let i = 0; i < this.options.length; i++){
-                this.options[i].value = network.time[this.options[i].value]
+            this.options = []
+            for(let i = 0; i < Object.keys(network.time).length; i++){
+                this.options.push({text: Object.keys(network.time)[i], value: Object.values(network.time)[i]})
             }
             this.period = this.options[0].value            
         },

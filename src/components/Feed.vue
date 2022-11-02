@@ -39,13 +39,13 @@ export default {
             test: {
                 input: this.feed.href + "/test",
                 oracle: this.feed.oracle,
-                bounty: 1_000_000_000_000_000_000,
+                bounty: 1_000_000_000_000//1_000_000_000_000_000_000,
             },
         }
     },
     methods: {
         newRequest(test){
-            this.$store.dispatch("newRequest", {oracle: this.test.oracle, input: this.test.input, bounty: this.test.bounty.toString(), test: test})
+            this.$store.dispatch("newRequest", {oracle: this.test.oracle, input: this.test.input, bounty: this.test.bounty.toString(), test: test[this.$store.state.ethereum.network]})
             .then(res => {
                 this.$bvToast.toast(`New Request ID: ${JSON.stringify(res)}`, {
                     title: 'Success',

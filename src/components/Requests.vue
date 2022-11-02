@@ -73,7 +73,6 @@ export default {
     },
     methods: {
         fillRequest(id){
-            debugger
             let self = this;
             this.$store.dispatch("fillRequest", {id: id, signature: this.signature, data: this.data}).then(res => {
                 this.$bvToast.toast(`Request filled`, {
