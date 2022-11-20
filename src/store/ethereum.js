@@ -15,8 +15,8 @@ const ethereum = {
         user: null,  
         multicall: null,
         ethcallProvider: null,
-        supportedNetworks: [{"Klaytn BaoBab": 1001}, {"Mumbai": 80001}],
-        multicallAddresses: {"Klaytn BaoBab": "0x40643B8Aeaaca0b87Ea1A1E596e64a0e14B1d244", Mumbai: "0x08411ADd0b5AA8ee47563b146743C13b3556c9Cc"},
+        supportedNetworks: [{"Klaytn BaoBab": 1001}, {"Mumbai": 80001}, {"Aurora Testnet": 1313161555}],
+        multicallAddresses: {"Klaytn BaoBab": "0x40643B8Aeaaca0b87Ea1A1E596e64a0e14B1d244", Mumbai: "0x08411ADd0b5AA8ee47563b146743C13b3556c9Cc", "Aurora Testnet": "0x8f81207F59A4f86d68608fF90b259A0927242967"},
         //contract: markRaw(new ethers.Contract("0x503cdba19c484fc4aec22f0e8f3dc37a5c327c27", require("../../../ABI/Babysitter.json"), new providers.JsonRpcProvider({ url: RPC }, CHAIN_ID))),
         send: async function(tx, provider){
             await provider.send('eth_sendTransaction',[{from: tx.from, to: tx.to, data: tx["data"], value: tx["value"]}])

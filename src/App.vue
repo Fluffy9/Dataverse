@@ -10,12 +10,14 @@
           <b-nav-item to="/about">👋 About</b-nav-item>
           <b-nav-item to="/feeds">⛓ Feeds</b-nav-item>
           <b-nav-item to="/keepers">🎭 Keepers</b-nav-item>
+          <b-nav-item href="https://starboard.gg/Fluffy9/Dataverse-Near-nrFdyOs">👩‍🏫 NEAR Tutorial</b-nav-item>
+          <b-nav-item href="https://starboard.gg/Fluffy9/Dataverse-EVM-n6vQpe4">👨‍🏫 EVM Tutorial</b-nav-item>
           <b-nav-item href="https://github.com/Fluffy9/Dataverse" target="_blank" rel="noopener noreferrer">📃 Docs</b-nav-item>
         </b-navbar-nav>
 
         <!-- Right aligned nav items -->
         <b-navbar-nav class="m-0">
-          <connect variant="light" :pill="true"></connect>
+          <connect-evm variant="light" :pill="true"></connect-evm>
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
@@ -27,10 +29,11 @@
   </div>
 </template>
 <script>
-import Connect from '@/components/Connect.vue'
+import ConnectEvm from '@/components/ConnectEvm.vue'
 export default {
-  components: {
-    Connect
+  components: { ConnectEvm },
+  mounted(){
+    this.$store.dispatch("near/Init")
   }
 }
 </script>
@@ -61,6 +64,7 @@ $theme-colors: (
 @import "~bootstrap/scss/bootstrap.scss";
 @import "~bootstrap-vue/src/index.scss";
 @import "~bootstrap-vue/src/icons.scss";
+@import "@near-wallet-selector/modal-ui/styles.css";
 
 html, body {
   //343b63ff

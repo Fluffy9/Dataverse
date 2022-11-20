@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <b-jumbotron text-variant="light" bg-variant="primary" header="🎭 Keeper Requests" lead="Publish data on-chain and recieve the bounty attached">
-            <b-button href="https://github.com/Fluffy9/Dataverse/wiki/Keepers">Build a Keeper Bot →</b-button>
+            <b-button href="https://starboard.gg/Fluffy9/Dataverse-EVM-n6vQpe4">Build a Keeper Bot →</b-button>
         </b-jumbotron>
         <div class="glassy rounded text-light shadow-sm p-4">
             <div v-if="ready">
@@ -22,16 +22,16 @@
             <div v-else>
                 <h1>Connect Your Wallet</h1>
                 <br>
-                <connect></connect>
+                <connect-evm variant="light" :pill="true"></connect-evm>
             </div>
         </div>
     </div>
 </template>
 <script>
 import Requests from "@/components/Requests.vue"
-import Connect from "@/components/Connect.vue"
+import ConnectEvm from '@/components/ConnectEvm.vue'
 export default {
-    components: { Requests, Connect },
+    components: { Requests, ConnectEvm },
     data(){
         return {
             loading: false,

@@ -14,7 +14,9 @@ module.exports = defineConfig({
 				process: 'process/browser',
 			}),
 		]
-	}
+	},
+	publicPath: '/Dataverse/'
+
 })
 css: {
 	loaderOptions: {

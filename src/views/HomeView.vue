@@ -7,7 +7,7 @@
             <!-- <b-skeleton width="70%"></b-skeleton>
             <b-skeleton width="46%"></b-skeleton>
             <b-skeleton width="39%"></b-skeleton> -->
-            <p>Dataverse is the protocol for building chain-agnostic hybrid smart contracts. Access data from any data source and utilize it on-chain. Build hybrid dapps such as GameFi and sybil resistant NFTs. Currently available on Klaytn BaoBab and Polygon Mumbai</p>
+            <p>Dataverse is the protocol for building chain-agnostic hybrid smart contracts. Access data from any data source and utilize it on-chain. Build hybrid dapps such as GameFi and sybil resistant NFTs. Currently available on Near Testnet, Aurora Testnet, Klaytn BaoBab, and Polygon Mumbai</p>
           </template>
         </b-jumbotron>        
       </b-col>
@@ -19,7 +19,7 @@
           <div>
             <h1>For Devs</h1>
             <p>Integrate with any data source with minimal setup. </p>
-            <b-button href="https://github.com/Fluffy9/Dataverse/wiki/Integration">Integration Docs →</b-button>
+            <b-button href="https://starboard.gg/Fluffy9/Dataverse-EVM-n6vQpe4">Integration Tutorial →</b-button>
           </div>
           <!-- <b-skeleton width="39%"></b-skeleton>
           <b-skeleton width="46%"></b-skeleton> -->

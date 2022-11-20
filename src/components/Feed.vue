@@ -20,19 +20,19 @@
                 </div>
             </b-modal>
             <b-button v-if="this.$store.getters['ethereum/ready']" v-b-modal="`modal-${feed.id}`" variant="primary">Test</b-button>
-            <connect v-else variant="primary"></connect>
+            <connect-evm variant="light" :pill="true"></connect-evm>
             <b-button class="ml-2" target="_blank" v-if="feed['docs']" :href="feed['docs']" variant="secondary">Docs</b-button>
         </b-card>
     </div>
 </template>
 <script>
-import Connect from "@/components/Connect.vue"
+import ConnectEvm from './ConnectEvm.vue'
 
 export default {
     name: "feed",
     props: ["feed"],
     components: {
-        Connect
+        ConnectEvm,
     },
     data(){
         return {

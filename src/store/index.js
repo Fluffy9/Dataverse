@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import ethereum from '@/store/ethereum'
+import near from '@/store/near'
 import { ethers } from 'ethers'
 
 Vue.use(Vuex)
@@ -27,6 +28,15 @@ export default new Vuex.Store({
           "10 min": 600, // 2 sec block times
           "30 min": 3499, 
         }
+      }, 
+      {
+        name: "Aurora Testnet",
+        currency: "ETH",
+        registry: "0xcB242BDD75aF6D68e4c12a681acD7c3dD3A53e51",
+        time: {
+          "10 min": 600,
+          "30 min": 3499,
+        }
       }
     ],
 
@@ -35,7 +45,7 @@ export default new Vuex.Store({
         {
           id: 0, 
           name: "BasicAPI", 
-          networks: ["Klaytn", "Mumbai"], 
+          networks: ["Klaytn", "Mumbai", "Aurora"], 
           desc: "Fetch any public API", 
           docs: "https://github.com/Fluffy9/Dataverse/wiki/Feeds#basicapi-feed", 
           oracle: "0x62117462Abd17359468191716fBcfd3eEa2Dd023", 
@@ -43,7 +53,8 @@ export default new Vuex.Store({
           href: "http://h8jmnn0fdld39b2hp1l5v0c6a8.ingress.akt.computer",
           test: {
             "Klaytn BaoBab": "0xB20B232215a7d544cD2fC9cdE25416343CdF68d3", 
-            "Mumbai": "0x981bA12935675F696D6bfdcDe349fAB34f369107"
+            "Mumbai": "0x981bA12935675F696D6bfdcDe349fAB34f369107",
+            "Aurora Testnet": "0xb20b232215a7d544cd2fc9cde25416343cdf68d3"
           },
         }
       ]
@@ -93,5 +104,6 @@ export default new Vuex.Store({
   },
   modules: {
     ethereum: ethereum,
+    near: near
   }
 })
