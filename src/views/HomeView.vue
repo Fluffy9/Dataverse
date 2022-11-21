@@ -7,7 +7,7 @@
             <!-- <b-skeleton width="70%"></b-skeleton>
             <b-skeleton width="46%"></b-skeleton>
             <b-skeleton width="39%"></b-skeleton> -->
-            <p>Dataverse is the protocol for building chain-agnostic hybrid smart contracts. Access data from any data source and utilize it on-chain. Build hybrid dapps such as GameFi and sybil resistant NFTs. Currently available on Near Testnet, Aurora Testnet, Klaytn BaoBab, and Polygon Mumbai</p>
+            <p>Dataverse is the protocol for building chain-agnostic hybrid smart contracts. Access data from any data source and utilize it on-chain. Build hybrid dapps such as GameFi and sybil resistant NFTs. Currently available on Near Mainnet, Aurora Testnet, Klaytn BaoBab, and Polygon Mumbai</p>
           </template>
         </b-jumbotron>        
       </b-col>

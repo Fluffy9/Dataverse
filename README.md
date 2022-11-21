@@ -61,9 +61,7 @@ It doesn't seem to be possible/practical to validate a signature on-chain on Nea
 
 ## Accomplishments that we're proud of
 
-Building an oracle is pretty hard and I managed to finish in time. I'm really impressed that it actually works as well as I first thought it would so there's that. 
 
-I think it's also really difficult to communicate how a developer tooling project works. I'm really proud I managed to build both a code-focused tutorial and a UI. A lot of time was spent thinking about how to present the concept I had.
 
 ## What we learned
 
